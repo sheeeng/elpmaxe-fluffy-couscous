@@ -53,6 +53,11 @@ RUN useradd -r -u 200 -m -c "nexus role account" -d ${SONATYPE_WORK} -s /bin/fal
 
 VOLUME ${SONATYPE_WORK}
 
+COPY images/header_branding.png /opt/sonatype/nexus/nexus/images/
+COPY images/nexus650x55.png /opt/sonatype/nexus/nexus/images/
+COPY images/favicon.png /opt/sonatype/nexus/nexus/
+COPY images/favicon.ico /opt/sonatype/nexus/nexus/
+
 EXPOSE 8081
 WORKDIR /opt/sonatype/nexus
 USER nexus
